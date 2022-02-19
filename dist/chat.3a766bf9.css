@@ -1,0 +1,84 @@
+.messageWrapper {
+  position: relative;
+  max-width: 320px;
+  margin: 0 auto 8px 16px;
+  padding: 8px 32px 8px 8px;
+  font-size: 16px;
+  text-align: left;
+  color: #444444;
+  background-color: rgba(51, 105, 243, 0.09);
+  border-radius: 8px;
+}
+.messageWrapper_blue {
+  position: relative;
+  max-width: 320px;
+  margin: 0 16px 8px auto;
+  padding: 8px 32px 16px 8px;
+  font-size: 16px;
+  text-align: left;
+  color: white;
+  background-color: #3369F3;
+  border-radius: 8px;
+}
+.messageText {
+  font-size: 16px;
+}
+.messageTime {
+  position: absolute;
+  bottom: 1px;
+  right: 32px;
+  font-size: 10px;
+}
+.readArrow {
+  position: absolute;
+  bottom: 4px;
+  right: 8px;
+  width: 16px;
+}
+.chatMain {
+  padding-top: 32px;
+}
+.chatTyper {
+  position: fixed;
+  display: flex;
+  width: 375px;
+  bottom: 0;
+  height: 55px;
+  background-color: #3369F3;
+  align-items: center;
+}
+.sendButtonCase {
+  position: absolute;
+  display: flex;
+  right: 16px;
+  bottom: 16px;
+  width: 70px;
+  height: 70px;
+  border: 4px solid #FFFFFF;
+  border-radius: 50%;
+  background-color: #3369F3;
+  z-index: 1;
+  justify-content: center;
+  align-items: center;
+}
+.addFilesIconBtn {
+  margin: 0 16px;
+  padding: 0;
+}
+.addImageIconBtn {
+  margin: 0 16px 0 0;
+  padding: 0;
+}
+.chatInput {
+  width: 192px;
+  padding: 8px 0;
+  background-color: #3369F3;
+  outline: none;
+  border: none;
+  color: white;
+}
+.chatInput::placeholder {
+  color: white;
+}
+
+/*# sourceMappingURL=chat.3a766bf9.css.map */

@@ -1,0 +1,63 @@
+.img {
+  width: 58px;
+  height: 58px;
+  margin-right: 8px;
+  border-radius: 50%;
+}
+.name {
+  font-size: 16px;
+  font-weight: bold;
+}
+.message {
+  font-size: 14px;
+  font-weight: normal;
+}
+.chatInfo {
+  display: flex;
+  flex-direction: column;
+}
+.chatWrapper {
+  position: relative;
+  display: flex;
+  padding: 8px 16px;
+  height: 73px;
+  align-items: center;
+  border-bottom: 1px solid #E5E5E5;
+}
+.messageTime {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.unreadCount {
+  position: absolute;
+  display: flex;
+  bottom: 8px;
+  right: 16px;
+  width: 20px;
+  height: 20px;
+  background-color: #3369F3;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+}
+.main {
+  margin: 0 auto;
+  width: 375px;
+}
+.emptyChatsText {
+  width: 100%;
+  margin-top: 32px;
+  text-align: center;
+  color: #858585;
+}
+.emptyChatsLink {
+  color: #3369F3;
+}
+
+/*# sourceMappingURL=pages.6756bb42.css.map */

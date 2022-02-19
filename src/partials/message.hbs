@@ -1,0 +1,9 @@
+<div class="messageWrapper{{#if isMine}}_blue{{/if}}">
+    <p class="messageText">{{text}}</p>
+    <p class="messageTime">{{time}}</p>
+    {{#if isRead}}
+        <img src="../src/icons/checkMessageGreen.svg" alt="checkMessageGreen" class="readArrow" />
+    {{else}}
+        <img src="../src/icons/checkMessage.svg" alt="checkMessage" class="readArrow" />
+    {{/if}}
+</div>

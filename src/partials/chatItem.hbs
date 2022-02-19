@@ -1,0 +1,20 @@
+<div class="chatWrapper">
+    {{#if avatar }}
+    <img class="img"
+         src="{{ avatar }}"
+         alt="avatar"/>
+{{else}}
+    <img src="https://via.placeholder.com/150"
+         alt="avatar"/>
+{{/if}}
+    <div class="chatInfo">
+        <p class="name">{{ name }}</p>
+        <p class="message">{{#if isMine}}Вы: {{/if}}{{ lastMessage }}</p>
+    </div>
+    <p class="messageTime">{{ lastMessageTime }}</p>
+    {{#if unreadCount}}
+        <div class="unreadCount">
+            <p>{{ unreadCount }}</p>
+        </div>
+    {{/if}}
+</div>

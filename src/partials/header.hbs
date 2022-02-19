@@ -1,0 +1,33 @@
+<section class="header">
+    {{#if back}}
+        <a href="/">
+            <img src="../src/icons/arrowBack.svg" alt="arrowBack"/>
+        </a>
+    {{else}}
+        <button type="button" onclick="alert('Я еще не работаю')" class="menuIcon">
+            <span class="menuItem"></span>
+            <span class="menuItem"></span>
+            <span class="menuItem"></span>
+        </button>
+    {{/if}}
+
+    <div class="headerContentWrapper">
+        <p class="headerHeading">{{heading}}</p>
+        <div class="headerIcons">
+            <button type="button" onclick="alert('Я еще не работаю')">
+                <img src="../src/icons/bell.svg"
+                     alt="bellIcon"/>
+            </button>
+            <button type="button" onclick="alert('Я еще не работаю')">
+                <img src="../src/icons/zoomGlass.svg"
+                     alt="zoomGlassIcon"/>
+            </button>
+            <a href="./profile.hbs">
+                <button type="button">
+                    <img src="../src/icons/profileIcon.svg"
+                         alt="profile"/>
+                </button>
+            </a>
+        </div>
+    </div>
+</section>

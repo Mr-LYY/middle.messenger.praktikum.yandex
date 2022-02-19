@@ -1,0 +1,69 @@
+---
+messages: [
+    {
+        text: "Привет АНдрюха! Как дела?",
+        isMine: true,
+        isRead: true,
+        time: "10:42",
+    },
+    {
+        text: "Ооо, привет) Да всё хорошо, у тебя как?",
+        isMine: false,
+        isRead: true,
+        time: "10:42",
+    },
+    {
+        text: "Ну тоже все отлично, погнали в бар!",
+        isMine: true,
+        isRead: false,
+        time: "10:42",
+    },
+]
+---
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible"
+              content="ie=edge">
+        <title>Chat page</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet/less" type="text/css" href="../src/layout/base.less" />
+        <link rel="stylesheet/less" type="text/css" href="../src/pages/chat/chat.less" />
+        <script src="../src/layout/less.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <header class="chatHeader">
+            {{>header back=true heading='Андрей'}}
+        </header>
+        <main class="chatMain">
+            {{#each messages}}
+                {{>message
+                        text=this.text
+                        isMine=isMine
+                        isRead=isRead
+                        time=time
+                }}
+            {{/each}}
+            <section class="chatTyper">
+                <button class="addFilesIconBtn" onclick="alert('Я еще не работаю')">
+                    <img src="../src/icons/addFilesIcon.svg"
+                         alt="addFilesIcon" class="addFilesIcon" />
+                </button>
+                <button class="addImageIconBtn" onclick="alert('Я еще не работаю')">
+                    <img src="../src/icons/addImageIcon.svg"
+                     alt="addImageIcon" class="addImageIcon" />
+                </button>
+                <input placeholder="Сообщение.." class="chatInput" />
+                <button onclick="alert('Я еще не работаю')" class="sendButtonCase" type="button">
+                    <img src="../src/icons/sendButton.svg"
+                         alt="sendButton" class="sendButton" />
+                </button>
+            </section>
+        </main>
+    </body>
+</html>
