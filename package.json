@@ -1,0 +1,35 @@
+{
+  "name": "chat",
+  "version": "1.0.0",
+  "description": "",
+  "engines": {
+    "node": "v14.0.0"
+  },
+  "scripts": {
+    "dev": "parcel ./static/index.hbs --open --port 3000 --no-cache",
+    "build": "parcel build ./static/*.hbs",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mr-LYY/middle.messenger.praktikum.yandex.git"
+  },
+  "author": "Dmitriy Lyulekin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mr-LYY/middle.messenger.praktikum.yandex/issues"
+  },
+  "homepage": "https://github.com/Mr-LYY/middle.messenger.praktikum.yandex#readme",
+  "devDependencies": {
+    "@anikin/parcel-transformer-handlebars": "^1.0.9",
+    "@parcel/transformer-less": "^2.3.1",
+    "less": "^4.1.2",
+    "nodemon": "^2.0.15",
+    "parcel": "^2.3.1"
+  },
+  "dependencies": {
+    "@anikin/parcel-transformer-handlebars-precompile": "^1.0.1",
+    "express": "^4.17.3",
+    "handlebars": "^4.7.7"
+  }
+}
