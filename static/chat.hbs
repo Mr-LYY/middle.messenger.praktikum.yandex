@@ -32,9 +32,8 @@ messages: [
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-        <link rel="stylesheet/less" type="text/css" href="../src/layout/base.less" />
-        <link rel="stylesheet/less" type="text/css" href="../src/pages/chat/chat.less" />
-        <script src="../src/layout/less.js" type="text/javascript"></script>
+        <link rel="stylesheet" type="text/css" href="../src/layout/base.less" />
+        <link rel="stylesheet" type="text/css" href="../src/pages/chat/chat.less" />
     </head>
     <body>
         <header class="chatHeader">
@@ -50,16 +49,16 @@ messages: [
                 }}
             {{/each}}
             <section class="chatTyper">
-                <button class="addFilesIconBtn" onclick="alert('Я еще не работаю')">
+                <button type="button" class="addFilesIconBtn" onclick="alert('Я еще не работаю')">
                     <img src="../src/icons/addFilesIcon.svg"
                          alt="addFilesIcon" class="addFilesIcon" />
                 </button>
-                <button class="addImageIconBtn" onclick="alert('Я еще не работаю')">
+                <button type="button" class="addImageIconBtn" onclick="alert('Я еще не работаю')">
                     <img src="../src/icons/addImageIcon.svg"
                      alt="addImageIcon" class="addImageIcon" />
                 </button>
                 <input placeholder="Сообщение.." class="chatInput" />
-                <button onclick="alert('Я еще не работаю')" class="sendButtonCase" type="button">
+                <button type="button" onclick="alert('Я еще не работаю')" class="sendButtonCase" type="button">
                     <img src="../src/icons/sendButton.svg"
                          alt="sendButton" class="sendButton" />
                 </button>

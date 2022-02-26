@@ -3,10 +3,10 @@
     <img class="img"
          src="{{ avatar }}"
          alt="avatar"/>
-{{else}}
+    {{else}}
     <img src="https://via.placeholder.com/150"
          alt="avatar"/>
-{{/if}}
+    {{/if}}
     <div class="chatInfo">
         <p class="name">{{ name }}</p>
         <p class="message">{{#if isMine}}Вы: {{/if}}{{ lastMessage }}</p>
