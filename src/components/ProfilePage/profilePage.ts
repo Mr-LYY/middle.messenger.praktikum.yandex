@@ -1,7 +1,8 @@
 import Block from '../../utils/Block';
 import template from './profilePage.hbs';
+
+import FormInputCase from "../FormInputCase";
 import Header from "../Header";
-import FormInput from "../FormInput";
 import {ICONS} from "../../icons/icons";
 
 export class ProfilePage extends Block {
@@ -15,35 +16,80 @@ export class ProfilePage extends Block {
             back: true,
             icons: ICONS
         })
-        this.children.formInput1 = new FormInput({
-            heading: "Почта",
+
+        this.children.formInputCase1 = new FormInputCase({
             value: "pochta@yandex.ru",
-            type: "email"
+            title: 'Почта',
+            type: "email",
+            required: true,
+            id: 'profileEmail',
+            validationLabel: 'EMAIL',
+            childEvents: {
+                keyup: this.validateInput.bind(this),
+                focus: this.validateInput.bind(this),
+                blur: this.validateInput.bind(this)
+            },
+            errorMessage: ''
         })
-        this.children.formInput2 = new FormInput({
-            heading: "Логин",
+
+        this.children.formInputCase2 = new FormInputCase({
             value: "lyulekin",
-            type: "text"
+            title: 'Логин',
+            type: "text",
+            required: true,
+            id: 'profileName',
+            validationLabel: 'LOGIN',
+            childEvents: {
+                keyup: this.validateInput.bind(this),
+                focus: this.validateInput.bind(this),
+                blur: this.validateInput.bind(this)
+            },
+            errorMessage: ''
         })
-        this.children.formInput3 = new FormInput({
-            heading: "Имя",
+
+        this.children.formInputCase3 = new FormInputCase({
             value: "Дмитрий",
-            type: "text"
+            title: 'Имя',
+            type: "text",
+            required: true,
+            id: 'profileLogin',
+            validationLabel: 'NAMES',
+            childEvents: {
+                keyup: this.validateInput.bind(this),
+                focus: this.validateInput.bind(this),
+                blur: this.validateInput.bind(this)
+            },
+            errorMessage: ''
         })
-        this.children.formInput4 = new FormInput({
-            heading: "Фамилия",
+
+        this.children.formInputCase4 = new FormInputCase({
             value: "Люлекин",
-            type: "text"
+            title: 'Фамилия',
+            type: "text",
+            required: true,
+            id: 'profileLastname',
+            validationLabel: 'NAMES',
+            childEvents: {
+                keyup: this.validateInput.bind(this),
+                focus: this.validateInput.bind(this),
+                blur: this.validateInput.bind(this)
+            },
+            errorMessage: ''
         })
-        this.children.formInput5 = new FormInput({
-            heading: "Имя в чате",
-            value: "Дима",
-            type: "text"
-        })
-        this.children.formInput6 = new FormInput({
-            heading: "Телефон",
+
+        this.children.formInputCase5 = new FormInputCase({
             value: "+7 (916) 889 72 93",
-            type: "tel"
+            title: 'Фамилия',
+            type: "tel",
+            required: true,
+            id: 'profilePhone',
+            validationLabel: 'PHONE',
+            childEvents: {
+                keyup: this.validateInput.bind(this),
+                focus: this.validateInput.bind(this),
+                blur: this.validateInput.bind(this)
+            },
+            errorMessage: ''
         })
     }
 

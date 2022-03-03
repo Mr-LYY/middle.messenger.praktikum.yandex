@@ -2,10 +2,15 @@ import Block from '../../utils/Block';
 import template from './formInput.hbs';
 
 interface FormInputProps {
-    heading: string;
     value?: string;
     type: string;
+    id: string;
+    validationLabel: string;
     required?: boolean;
+    events?: {
+        focus?: () => void;
+        blur?: () => void;
+    }
 }
 
 export class FormInput extends Block {

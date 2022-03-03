@@ -1,7 +1,8 @@
 import Block from '../../utils/Block';
 import template from './loginPage.hbs';
-import FormInput from "../FormInput";
+
 import Button from "../Button";
+import FormInputCase from "../FormInputCase";
 
 export class LoginPage extends Block {
     constructor() {
@@ -9,16 +10,34 @@ export class LoginPage extends Block {
     }
 
     protected initChildren() {
-        this.children.formInput1 = new FormInput({
-            heading: "Логин",
+        this.children.formInputCase1 = new FormInputCase({
+            title: 'Логин',
             type: "text",
-            required: true
+            required: true,
+            id: 'loginLogin',
+            validationLabel: 'LOGIN',
+            childEvents: {
+                keyup: this.validateInput.bind(this),
+                focus: this.validateInput.bind(this),
+                blur: this.validateInput.bind(this)
+            },
+            errorMessage: ''
         })
-        this.children.formInput2 = new FormInput({
-            heading: "Пароль",
+
+        this.children.formInputCase2 = new FormInputCase({
+            title: 'Пароль',
             type: "password",
-            required: true
+            required: true,
+            id: 'registerPassword',
+            validationLabel: 'PASSWORD',
+            childEvents: {
+                keyup: this.validateInput.bind(this),
+                focus: this.validateInput.bind(this),
+                blur: this.validateInput.bind(this)
+            },
+            errorMessage: ''
         })
+
         this.children.button = new Button({
             type: 'submit',
             text: 'Войти'

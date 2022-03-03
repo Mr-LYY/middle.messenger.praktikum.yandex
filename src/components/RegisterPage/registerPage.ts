@@ -1,7 +1,8 @@
 import Block from '../../utils/Block';
 import template from './register.hbs';
-import FormInput from "../FormInput";
+
 import Button from "../Button";
+import FormInputCase from '../FormInputCase';
 
 export class RegisterPage extends Block {
     constructor() {
@@ -9,44 +10,107 @@ export class RegisterPage extends Block {
     }
 
     protected initChildren() {
-        this.children.formInput1 = new FormInput({
-            heading: "Почта",
+        this.children.formInputCase = new FormInputCase({
+            title: 'Почта',
             type: "email",
-            required: true
+            required: true,
+            id: 'registerEmail',
+            validationLabel: 'EMAIL',
+            childEvents: {
+                keyup: this.validateInput.bind(this),
+                focus: this.validateInput.bind(this),
+                blur: this.validateInput.bind(this)
+            },
+            errorMessage: ''
         })
-        this.children.formInput2 = new FormInput({
-            heading: "Логин",
+
+        this.children.formInputCase2 = new FormInputCase({
+            title: 'Логин',
             type: "text",
-            required: true
+            required: true,
+            id: 'registerLogin',
+            validationLabel: 'LOGIN',
+            childEvents: {
+                keyup: this.validateInput.bind(this),
+                focus: this.validateInput.bind(this),
+                blur: this.validateInput.bind(this)
+            },
+            errorMessage: ''
         })
-        this.children.formInput3 = new FormInput({
-            heading: "Имя",
+
+        this.children.formInputCase3 = new FormInputCase({
+            title: 'Имя',
             type: "text",
-            required: true
+            required: true,
+            id: 'registerName',
+            validationLabel: 'NAMES',
+            childEvents: {
+                keyup: this.validateInput.bind(this),
+                focus: this.validateInput.bind(this),
+                blur: this.validateInput.bind(this)
+            },
+            errorMessage: ''
         })
-        this.children.formInput4 = new FormInput({
-            heading: "Фамилия",
+
+        this.children.formInputCase4 = new FormInputCase({
+            title: 'Фамилия',
             type: "text",
-            required: true
+            required: true,
+            id: 'registerLastname',
+            validationLabel: 'NAMES',
+            childEvents: {
+                keyup: this.validateInput.bind(this),
+                focus: this.validateInput.bind(this),
+                blur: this.validateInput.bind(this)
+            },
+            errorMessage: ''
         })
-        this.children.formInput5 = new FormInput({
-            heading: "Телефон",
+
+        this.children.formInputCase5 = new FormInputCase({
+            title: 'Телефон',
             type: "tel",
-            required: true
+            required: true,
+            id: 'registerPhone',
+            validationLabel: 'PHONE',
+            childEvents: {
+                keyup: this.validateInput.bind(this),
+                focus: this.validateInput.bind(this),
+                blur: this.validateInput.bind(this)
+            },
+            errorMessage: ''
         })
-        this.children.formInput6 = new FormInput({
-            heading: "Пароль",
+
+        this.children.formInputCase6 = new FormInputCase({
+            title: 'Пароль',
             type: "password",
-            required: true
+            required: true,
+            id: 'registerPassword',
+            validationLabel: 'PASSWORD',
+            childEvents: {
+                keyup: this.validateInput.bind(this),
+                focus: this.validateInput.bind(this),
+                blur: this.validateInput.bind(this)
+            },
+            errorMessage: ''
         })
-        this.children.formInput7 = new FormInput({
-            heading: "Пароль (еще раз)",
+
+        this.children.formInputCase7 = new FormInputCase({
+            title: 'Пароль (повторно)',
             type: "password",
-            required: true
+            required: true,
+            id: 'registerRepeatPassword',
+            validationLabel: 'PASSWORD_AGAIN',
+            childEvents: {
+                keyup: this.validateInput.bind(this),
+                focus: this.validateInput.bind(this),
+                blur: this.validateInput.bind(this)
+            },
+            errorMessage: ''
         })
+
         this.children.button = new Button({
             type: 'submit',
-            text: 'Зерегистрироваться'
+            text: 'Зарегистрироваться'
         })
     }
 

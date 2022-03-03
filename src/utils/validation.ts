@@ -9,7 +9,7 @@ export enum VALIDATION_INPUT {
 }
 
 export const validation = (
-    validationInput: VALIDATION_INPUT,
+    validationInput: VALIDATION_INPUT | string,
     value: string,
     validValue?: string,
 ): { isValid: boolean; message: string } => {
@@ -32,12 +32,12 @@ export const validation = (
             };
         case VALIDATION_INPUT.PASSWORD:
             return {
-                isValid: /^(?=.*\d)(?=.*[A-Z]).{7,40}$/.test(value),
-                message: 'Некорректный пароль',
+                isValid: /^(?=.*\d)(?=.*[A-Z]).{8,40}$/.test(value),
+                message: '8-40 символов, заглавная буква и цифра',
             };
         case VALIDATION_INPUT.PASSWORD_AGAIN:
             return {
-                isValid: value !== validValue,
+                isValid: value === validValue,
                 message: 'Пароли не совпадают',
             };
         case VALIDATION_INPUT.PHONE:

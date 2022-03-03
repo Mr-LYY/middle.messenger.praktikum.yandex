@@ -1,5 +1,6 @@
-import {nanoid} from "nanoid";
+import { nanoid } from "nanoid";
 import EventBus from "./EventBus";
+import { validation, VALIDATION_INPUT } from "./validation";
 
 class Block {
     static EVENTS = {
@@ -8,15 +9,10 @@ class Block {
         FLOW_CDU: "flow:component-did-update",
         FLOW_RENDER: "flow:render",
     };
-
-    public id = nanoid(6);
-
+    public id: string = nanoid(6);
     private _element: HTMLElement | null = null;
-
     private _meta: { props: any };
-
     protected props: any;
-
     protected children: Record<string, Block>;
 
     private eventBus: () => EventBus;
@@ -134,12 +130,12 @@ class Block {
         const self = this;
 
         return new Proxy(props, {
-            get(target: Record<string, unknown>, prop: string) {
+            get(target: Record<string, any>, prop: string) {
                 const value = target[prop];
                 return typeof value === "function" ? value.bind(target) : value;
             },
 
-            set(target: Record<string, unknown>, prop: string, value: unknown) {
+            set(target: Record<string, any>, prop: string, value: any) {
                 const oldProps = { ...target };
                 target[prop] = value;
                 self.eventBus().emit(Block.EVENTS.FLOW_CDU, oldProps, target);
@@ -177,6 +173,16 @@ class Block {
     // eslint-disable-next-line class-methods-use-this
     _createDocumentElement(tagName: string): HTMLElement {
         return document.createElement(tagName);
+    }
+
+    public validateInput(e) {
+        const element = e.target;
+        const password = <HTMLInputElement>this.children.formInputCase6?.children.formInput.element;
+        const {isValid, message} = validation(VALIDATION_INPUT[element.ariaLabel], element.value, password.value)
+
+        isValid
+          ? element.nextElementSibling.textContent = ''
+          : element.nextElementSibling.textContent = message;
     }
 
     compile(template: (context: any) => string, context: any) {
