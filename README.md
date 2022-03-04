@@ -8,7 +8,7 @@
 
 ## [Pull Request#2](https://github.com/Mr-LYY/middle.messenger.praktikum.yandex/pull/4)
 
-## [Netlify](https://jovial-ramanujan-625b84.netlify.app)
+## [Netlify](https://62215d6072ae3a0007e6f583--jovial-ramanujan-625b84.netlify.app/)
 
 Node.js
 
