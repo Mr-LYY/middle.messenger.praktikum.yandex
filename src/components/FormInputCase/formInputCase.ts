@@ -1,7 +1,7 @@
 import Block from '../../utils/Block';
 import template from './formInputCase.hbs';
-import FormInput from "../FormInput";
-import InputErrorMessage from "../InputErrorMessage";
+import FormInput from '../FormInput';
+import InputErrorMessage from '../InputErrorMessage';
 
 interface FormInputCaseProps {
     value?: string;
@@ -30,12 +30,12 @@ export class FormInputCase extends Block {
             required: this.props.required,
             id: this.props.id,
             validationLabel: this.props.validationLabel,
-            events: this.props.childEvents
-        })
+            events: this.props.childEvents,
+        });
 
         this.children.errorMessage = new InputErrorMessage({
-            message: this.props.errorMessage
-        })
+            message: this.props.errorMessage,
+        });
     }
 
     render() {

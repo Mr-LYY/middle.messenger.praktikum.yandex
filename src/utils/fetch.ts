@@ -6,38 +6,58 @@ export enum METHOD_TYPES {
 }
 
 interface IOptions {
-    headers?: Record<string, string>,
-    method: METHOD_TYPES,
+    headers?: Record<string, string>;
+    method: METHOD_TYPES;
     data?: Document | XMLHttpRequestBodyInit;
     timeout?: number;
 }
 
 function queryStringify(queryObj: Record<string, unknown>) {
     const keys = Object.keys(queryObj);
-    return keys.reduce((result, key, index) => `${result}${key}=${queryObj[key]}${index < keys.length - 1 ? '&' : ''}`, '?');
+    return keys.reduce(
+        (result, key, index) =>
+            `${result}${key}=${queryObj[key]}${
+                index < keys.length - 1 ? '&' : ''
+            }`,
+        '?',
+    );
 }
 
 export class HTTPTransport {
-    public get = (url: string, options: IOptions = { method: METHOD_TYPES.GET }) => {
+    public get = (
+        url: string,
+        options: IOptions = { method: METHOD_TYPES.GET },
+    ) => {
         this.request(url, { ...options, method: METHOD_TYPES.GET });
     };
 
-    public put = (url: string, options: IOptions = { method: METHOD_TYPES.GET }) => {
+    public put = (
+        url: string,
+        options: IOptions = { method: METHOD_TYPES.GET },
+    ) => {
         this.request(url, { ...options, method: METHOD_TYPES.PUT });
     };
 
-    public post = (url: string, options: IOptions = { method: METHOD_TYPES.GET }) => {
+    public post = (
+        url: string,
+        options: IOptions = { method: METHOD_TYPES.GET },
+    ) => {
         this.request(url, { ...options, method: METHOD_TYPES.POST });
     };
 
-    public delete = (url: string, options: IOptions = { method: METHOD_TYPES.GET }) => {
+    public delete = (
+        url: string,
+        options: IOptions = { method: METHOD_TYPES.GET },
+    ) => {
         this.request(url, { ...options, method: METHOD_TYPES.DELETE });
     };
 
-    public request = (url: string, options: IOptions, queryObj: Record<string, unknown> = {}) => {
-        const {
-            data, method, timeout, headers,
-        } = options;
+    public request = (
+        url: string,
+        options: IOptions,
+        queryObj: Record<string, unknown> = {},
+    ) => {
+        const { data, method, timeout, headers } = options;
         return new Promise((resolve, reject) => {
             const xhr = new XMLHttpRequest();
 
@@ -54,7 +74,7 @@ export class HTTPTransport {
             }
 
             if (headers) {
-                Object.keys(headers).forEach((key) => {
+                Object.keys(headers).forEach(key => {
                     xhr.setRequestHeader(key, headers[key]);
                 });
             }

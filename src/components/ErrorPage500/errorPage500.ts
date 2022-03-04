@@ -1,6 +1,6 @@
 import Block from '../../utils/Block';
 import template from './errorPage500.hbs';
-import ErrorPartial from "../ErrorPartial";
+import ErrorPartial from '../ErrorPartial';
 
 export class ErrorPage500 extends Block {
     constructor() {
@@ -10,8 +10,8 @@ export class ErrorPage500 extends Block {
     protected initChildren() {
         this.children.error500 = new ErrorPartial({
             code: 500,
-            text: 'Небольшая заминка на нашем сервере. Уже чиним!'
-        })
+            text: 'Небольшая заминка на нашем сервере. Уже чиним!',
+        });
     }
 
     render() {

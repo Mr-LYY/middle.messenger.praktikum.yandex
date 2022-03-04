@@ -10,7 +10,7 @@ interface FormInputProps {
     events?: {
         focus?: () => void;
         blur?: () => void;
-    }
+    };
 }
 
 export class FormInput extends Block {

@@ -17,8 +17,7 @@ export const validation = (
         case VALIDATION_INPUT.NAMES:
             return {
                 isValid: /^[A-ZА-Я][а-яa-z]+$/.test(value),
-                message:
-                    'Только латиница или кириллица с заглавной буквы.',
+                message: 'Только латиница или кириллица с заглавной буквы.',
             };
         case VALIDATION_INPUT.LOGIN:
             return {

@@ -2,11 +2,11 @@ import Block from '../../utils/Block';
 import template from './button.hbs';
 
 interface ButtonProps {
-    type: string,
-    text: string,
+    type: string;
+    text: string;
     events?: {
-        click?: () => void
-    }
+        click?: () => void;
+    };
 }
 
 export class Button extends Block {

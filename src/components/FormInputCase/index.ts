@@ -1,1 +1,1 @@
-export { FormInputCase as default } from './formInputCase'
+export { FormInputCase as default } from './formInputCase';

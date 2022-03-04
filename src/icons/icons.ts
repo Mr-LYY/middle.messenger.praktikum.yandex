@@ -1,21 +1,21 @@
 // @ts-ignore
-import addFilesIcon from './addFilesIcon.svg'
+import addFilesIcon from './addFilesIcon.svg';
 // @ts-ignore
-import addImageIcon from './addImageIcon.svg'
+import addImageIcon from './addImageIcon.svg';
 // @ts-ignore
-import arrowBack from './arrowBack.svg'
+import arrowBack from './arrowBack.svg';
 // @ts-ignore
-import bell from './bell.svg'
+import bell from './bell.svg';
 // @ts-ignore
-import checkMessage from './checkMessage.svg'
+import checkMessage from './checkMessage.svg';
 // @ts-ignore
-import checkMessageGreen from './checkMessageGreen.svg'
+import checkMessageGreen from './checkMessageGreen.svg';
 // @ts-ignore
-import profileIcon from './profileIcon.svg'
+import profileIcon from './profileIcon.svg';
 // @ts-ignore
-import sendButton from './sendButton.svg'
+import sendButton from './sendButton.svg';
 // @ts-ignore
-import zoomGlass from './zoomGlass.svg'
+import zoomGlass from './zoomGlass.svg';
 
 export const ICONS = {
     addFilesIcon: addFilesIcon,
@@ -26,5 +26,5 @@ export const ICONS = {
     checkMessageGreen: checkMessageGreen,
     profileIcon: profileIcon,
     sendButton: sendButton,
-    zoomGlass: zoomGlass
-}
+    zoomGlass: zoomGlass,
+};

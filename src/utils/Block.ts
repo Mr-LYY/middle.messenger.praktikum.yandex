@@ -1,13 +1,13 @@
-import { nanoid } from "nanoid";
-import EventBus from "./EventBus";
-import { validation, VALIDATION_INPUT } from "./validation";
+import { nanoid } from 'nanoid';
+import EventBus from './EventBus';
+import { validation, VALIDATION_INPUT } from './validation';
 
 class Block {
     static EVENTS = {
-        INIT: "init",
-        FLOW_CDM: "flow:component-did-mount",
-        FLOW_CDU: "flow:component-did-update",
-        FLOW_RENDER: "flow:render",
+        INIT: 'init',
+        FLOW_CDM: 'flow:component-did-mount',
+        FLOW_CDU: 'flow:component-did-update',
+        FLOW_RENDER: 'flow:render',
     };
     public id: string = nanoid(6);
     private _element: HTMLElement | null = null;
@@ -41,7 +41,7 @@ class Block {
         eventBus.emit(Block.EVENTS.INIT);
     }
 
-    protected initChildren() { }
+    protected initChildren() {}
 
     _getChildren(propsAndChildren: any) {
         const children = {};
@@ -53,7 +53,7 @@ class Block {
             } else {
                 props[key] = value;
             }
-        })
+        });
 
         return { props, children };
     }
@@ -74,7 +74,7 @@ class Block {
     }
 
     // eslint-disable-next-line class-methods-use-this
-    protected componentDidMount() { }
+    protected componentDidMount() {}
 
     dispatchComponentDidMount() {
         this.eventBus().emit(Block.EVENTS.FLOW_CDM);
@@ -108,13 +108,13 @@ class Block {
         const fragment = this.render();
         const newElement = fragment.firstElementChild as HTMLElement;
 
-        if(this._element) {
+        if (this._element) {
             this._removeEvents();
-            this._element.replaceWith(newElement)
+            this._element.replaceWith(newElement);
         }
-        this._element = newElement
+        this._element = newElement;
         this._removeEvents();
-        this._addEvents()
+        this._addEvents();
     }
 
     // eslint-disable-next-line class-methods-use-this
@@ -132,7 +132,7 @@ class Block {
         return new Proxy(props, {
             get(target: Record<string, any>, prop: string) {
                 const value = target[prop];
-                return typeof value === "function" ? value.bind(target) : value;
+                return typeof value === 'function' ? value.bind(target) : value;
             },
 
             set(target: Record<string, any>, prop: string, value: any) {
@@ -142,7 +142,7 @@ class Block {
                 return true;
             },
             deleteProperty() {
-                throw new Error("Нет доступа");
+                throw new Error('Нет доступа');
             },
         });
     }
@@ -177,31 +177,41 @@ class Block {
 
     public validateInput(e) {
         const element = e.target;
-        const password = <HTMLInputElement>this.children.formInputCase6?.children.formInput.element;
-        const {isValid, message} = validation(VALIDATION_INPUT[element.ariaLabel], element.value, password?.value)
+        const password = <HTMLInputElement>(
+            this.children.formInputCase6?.children.formInput.element
+        );
+        const { isValid, message } = validation(
+            VALIDATION_INPUT[element.ariaLabel],
+            element.value,
+            password?.value,
+        );
 
         isValid
-          ? element.nextElementSibling.textContent = ''
-          : element.nextElementSibling.textContent = message;
+            ? (element.nextElementSibling.textContent = '')
+            : (element.nextElementSibling.textContent = message);
     }
 
     compile(template: (context: any) => string, context: any) {
-        const fragment = this._createDocumentElement('template') as HTMLTemplateElement;
+        const fragment = this._createDocumentElement(
+            'template',
+        ) as HTMLTemplateElement;
         Object.entries(this.children).forEach(([key, child]) => {
-            context[key] = `<div data-id="id-${child.id}"></div>`
-        })
+            context[key] = `<div data-id="id-${child.id}"></div>`;
+        });
         fragment.innerHTML = template(context);
 
         Object.entries(this.children).forEach(([key, child]) => {
-            const stub = fragment.content.querySelector(`[data-id="id-${child.id}"]`);
+            const stub = fragment.content.querySelector(
+                `[data-id="id-${child.id}"]`,
+            );
 
             if (!stub) {
                 return;
             }
 
             stub.replaceWith(child.getContent()!);
-        })
-        return fragment.content
+        });
+        return fragment.content;
     }
 }
 
