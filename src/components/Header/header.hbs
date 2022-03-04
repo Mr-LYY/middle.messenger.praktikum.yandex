@@ -1,0 +1,34 @@
+<section class='header'>
+    {{#if back}}
+        <a href='/'>
+            <img src='{{icons.arrowBack}}' alt='arrowBack' />
+        </a>
+    {{else}}
+        <button
+            type='button'
+            onclick="alert('Я еще не работаю')"
+            class='menuIcon'
+        >
+            <span class='menuItem'></span>
+            <span class='menuItem'></span>
+            <span class='menuItem'></span>
+        </button>
+    {{/if}}
+
+    <div class='headerContentWrapper'>
+        <p class='headerHeading'>{{heading}}</p>
+        <div class='headerIcons'>
+            <button type='button' onclick="alert('Я еще не работаю')">
+                <img src='{{icons.bellIcon}}' alt='bellIcon' />
+            </button>
+            <button type='button' onclick="alert('Я еще не работаю')">
+                <img src='{{icons.zoomGlass}}' alt='zoomGlassIcon' />
+            </button>
+            <a href='./profile.html'>
+                <button type='button'>
+                    <img src='{{icons.profileIcon}}' alt='profile' />
+                </button>
+            </a>
+        </div>
+    </div>
+</section>

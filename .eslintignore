@@ -1,0 +1,5 @@
+/.git
+/dist
+**/*.min.js
+/src/layout/less.js
+/node_modules
