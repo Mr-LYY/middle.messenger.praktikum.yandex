@@ -1,31 +1,12 @@
-@import "../../layout/constants.less";
-
-.inputHeading {
-  font-size: 10px;
-  color: @grey;
-}
-
-.inputError {
-  margin: 0 0 8px;
-
-  font-size: 8px;
-  color: @secondary;
-}
-
-.formInput {
-  width: 100%;
-  margin-bottom: 16px;
-  padding: 8px 0;
-
-  font-size: 14px;
-  font-weight: bold;
-
-  color: @black;
-  border: none;
-  border-bottom: 1px solid @primary;
-  outline: none;
-}
+@import "/src/layout/base";
+@import "/src/components/FormInput/formInput";
+@import "/src/components/InputErrorMessage/inputErrorMessage";
 
 .formInput__div {
   margin-bottom: 16px;
 }
+
+.inputHeading {
+   font-size: 14px;
+   color: @grey;
+ }

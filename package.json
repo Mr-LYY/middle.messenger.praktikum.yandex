@@ -20,7 +20,6 @@
   "devDependencies": {
     "@anikin/parcel-transformer-handlebars": "1.0.2",
     "@anikin/parcel-transformer-handlebars-precompile": "1.0.1",
-    "parcel": "^2.3.2",
     "@parcel/resolver-glob": "2.3.2",
     "@parcel/transformer-less": "^2.3.2",
     "@typescript-eslint/eslint-plugin": "5.12.1",
@@ -33,11 +32,13 @@
     "handlebars": "4.7.7",
     "less": "4.1.2",
     "nanoid": "3.3.1",
+    "parcel": "^2.3.2",
     "prettier": "2.5.1",
-    "stylelint": "14.5.3",
+    "stylelint": "^14.5.3",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-standard": "^25.0.0",
     "ts-node": "10.5.0",
     "typescript": "4.5.5"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }

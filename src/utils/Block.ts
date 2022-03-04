@@ -178,7 +178,7 @@ class Block {
     public validateInput(e) {
         const element = e.target;
         const password = <HTMLInputElement>this.children.formInputCase6?.children.formInput.element;
-        const {isValid, message} = validation(VALIDATION_INPUT[element.ariaLabel], element.value, password.value)
+        const {isValid, message} = validation(VALIDATION_INPUT[element.ariaLabel], element.value, password?.value)
 
         isValid
           ? element.nextElementSibling.textContent = ''

@@ -1,48 +1,51 @@
-@import "../../layout/constants.less";
-@import "../../partials/formInput.less";
+@import "../../layout/base.less";
 
-.FIOBlock {
+.chatInput {
+  width: 192px;
+  padding: 8px 0;
+  background-color: @primary;
+  outline: none;
+  border: none;
+  color: @white;
+}
+
+.chatInput::placeholder {
+  color: @white;
+}
+
+.chatTyper {
+  position: fixed;
   display: flex;
+  width: 375px;
+  margin: 0;
+  bottom: 0;
+  height: 55px;
+  background-color: @primary;
 
-  justify-content: space-between;
   align-items: center;
 }
 
-.profileAvatar {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
+.addFilesIconBtn {
+  margin: 0 16px;
+  padding: 0;
 }
 
-.profileBlock {
-  padding: 24px 32px 0 32px;
+.addImageIconBtn {
+  margin: 0 16px 0 0;
+  padding: 0;
 }
 
-.profileInputsBlock {
-  margin-top: 32px;
-}
-
-.profileBottomMenu {
+.sendButtonCase {
+  position: absolute;
   display: flex;
-
-  flex-direction: column;
+  right: 16px;
+  bottom: 16px;
+  width: 70px;
+  height: 70px;
+  border: 4px solid @white;
+  border-radius: 50%;
+  background-color: @primary;
+  z-index: 1;
   justify-content: center;
-  align-items: flex-start;
-}
-
-.profileLinkBlue {
-  margin-bottom: 8px;
-  font-size: 14px;
-  color: @primary;
-}
-
-.profileLinkRed {
-  font-size: 14px;
-  color: @secondary;
-}
-
-.profileFIO {
-  font-size: 16px;
-  font-weight: bold;
-  text-align: right;
+  align-items: center;
 }

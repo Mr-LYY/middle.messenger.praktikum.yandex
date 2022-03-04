@@ -1,5 +1,5 @@
 import Block from '../../utils/Block';
-import template from './register.hbs';
+import template from './registerPage.hbs';
 
 import Button from "../Button";
 import FormInputCase from '../FormInputCase';
